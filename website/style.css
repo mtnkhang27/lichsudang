@@ -277,7 +277,7 @@ nav .nav-links a:hover {
 }
 
 .image-frame {
-    width: 150%;
+    width: 100%;
     padding: 1rem;
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -738,4 +738,186 @@ nav .nav-links a:hover {
     .defense-card {
         width: 100%;
     }
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: rotate(1deg);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.slider-container:hover {
+    transform: rotate(0deg);
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    /* Aspect ratio placeholder approx 4:3 or similar */
+    height: 400px;
+    /* Fixed height for layout stability */
+    background-color: #f9f9f9;
+    /* Light background for smaller images */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    /* Use full available height of the slide */
+    max-height: 350px;
+    object-fit: contain;
+    /* Ensure full image is visible */
+    display: block;
+    margin: 0 auto;
+    filter: sepia(20%);
+}
+
+.slide .caption {
+    margin-top: 10px;
+    height: 40px;
+    /* Space for text */
+}
+
+/* Slider Controls */
+.slider-btn {
+    position: absolute;
+    top: 40%;
+    /* Center vertically relative to image */
+    transform: translateY(-50%);
+    background: rgba(218, 37, 29, 0.7);
+    /* Primary Red */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(218, 37, 29, 1);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 60px;
+    /* Above caption */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: var(--primary-red);
+    transform: scale(1.2);
+}
+/* Interactive Cards & Detail Box */
+.interactive-card {
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.interactive-card:hover {
+    transform: translateY(-5px);
+    background: #fff8e1; /* Subtle highlight */
+    border: 1px solid var(--primary-red);
+}
+
+.click-hint {
+    font-size: 0.7rem;
+    color: #999;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.difficulty-detail {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-red);
+    position: relative;
+    animation: slideDown 0.5s ease;
+}
+
+.difficulty-detail h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-red);
+}
+
+.difficulty-detail p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-detail {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+}
+
+.close-detail:hover {
+    color: var(--primary-red);
 }

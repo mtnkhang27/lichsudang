@@ -1,0 +1,119 @@
+<section id="part1" class="section history-section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">Giai đoạn 1945 - 1946</span>
+            <h2>Bối Cảnh Lịch Sử: "Ngàn Cân Treo Sợi Tóc"</h2>
+        </div>
+
+        <div class="content-grid">
+            <div class="text-content reveal-left">
+                <h3>1.1. Tình thế hiểm nghèo: "Thù trong, giặc ngoài"</h3>
+                <p>Ngay sau khi nước Việt Nam Dân chủ Cộng hòa ra đời, đất nước rơi vào thế "ngàn cân treo sợi tóc".
+                    Chúng ta bị bao vây tứ phía bởi các thế lực quân sự hùng hậu:</p>
+                <ul class="styled-list">
+                    <li><strong>Miền Bắc:</strong> 20 vạn quân Tưởng Giới Thạch tràn vào giải giáp quân Nhật, âm mưu
+                        lật đổ chính quyền cách mạng.</li>
+                    <li><strong>Miền Nam:</strong> Quân Anh dọn đường cho thực dân Pháp nổ súng xâm lược Sài Gòn
+                        (23/9/1945).</li>
+                    <li><strong>Nội phản:</strong> Các tổ chức Việt Quốc, Việt Cách đòi chia sẻ quyền lực.</li>
+                </ul>
+            </div>
+            <div class="image-content reveal-right">
+                <!-- Image Slider -->
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slide active">
+                            <img src="./images/history_sepia.png" alt="Bản đồ lịch sử 1945">
+                            <div class="caption">Bối cảnh lịch sử 1945: Tứ bề thọ địch</div>
+                        </div>
+                        <div class="slide">
+                            <img src="./images/binhdanhocvu1945-6893.jpg" alt="Phong trào Bình dân học vụ">
+                            <div class="caption">Phong trào Bình dân học vụ diệt "Giặc dốt"</div>
+                        </div>
+                        <div class="slide">
+                            <img src="./images/binhdanhocvu_2.jpg" alt="Lớp học bình dân học vụ">
+                            <div class="caption">Người dân hăng hái tham gia xóa mù chữ</div>
+                        </div>
+                        <!-- <div class="slide">
+                            <img src="./images/history_sepiaa.png" alt="Tư liệu lịch sử">
+                            <div class="caption">Sắc lệnh và các văn bản lịch sử quan trọng</div>
+                        </div> -->
+                    </div>
+                    <button class="slider-btn prev-btn">❮</button>
+                    <button class="slider-btn next-btn">❯</button>
+                    <div class="slider-dots"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid reverse">
+            <div class="text-content reveal-right">
+                <h3>1.2. Khó khăn nội tại</h3>
+                <div class="stat-cards">
+                    <div class="card interactive-card" onclick="showDetail('doi')">
+                        <div class="stat-number">2 Triệu</div>
+                        <div class="stat-label">Người chết đói (1945)</div>
+                        <div class="click-hint">(Bấm để xem)</div>
+                    </div>
+                    <div class="card interactive-card" onclick="showDetail('dot')">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Dân số mù chữ</div>
+                        <div class="click-hint">(Bấm để xem)</div>
+                    </div>
+                    <div class="card interactive-card" onclick="showDetail('xam')">
+                        <div class="stat-number">20 Vạn</div>
+                        <div class="stat-label">Quân ngoại xâm</div>
+                        <div class="click-hint">(Bấm để xem)</div>
+                    </div>
+                </div>
+
+                <!-- Detail Display Area (Originally hidden) -->
+                <div id="difficulty-detail" class="difficulty-detail" style="display: none;">
+                    <button class="close-detail" onclick="closeDetail()">×</button>
+                    <h4 id="detail-title" style="color: var(--primary-red); margin-bottom: 10px;"></h4>
+                    <div id="detail-content-area"></div>
+                </div>
+
+                <!-- Hidden Data Source -->
+                <div style="display: none;">
+                    <div id="data-doi">
+                        <h4>1. Giặc đói</h4>
+                        <p><strong>Tình trạng:</strong> Hậu quả của chính sách vơ vét từ Nhật và Pháp, cộng với thiên
+                            tai lũ lụt, khiến hơn 2 triệu người chết đói vào cuối năm 1944 - đầu năm 1945. Nông nghiệp
+                            đình trệ, ngân quỹ quốc gia trống rỗng.</p>
+                        <p><strong>Biện pháp đối phó:</strong> Chủ tịch Hồ Chí Minh kêu gọi lập "Hũ gạo cứu đói", tổ
+                            chức "Ngày đồng tâm" và phát động phong trào tăng gia sản xuất với khẩu hiệu "Tấc đất tấc
+                            vàng".</p>
+                    </div>
+                    <div id="data-dot">
+                        <h4>2. Giặc dốt</h4>
+                        <p><strong>Tình trạng:</strong> Hơn 90% dân số Việt Nam mù chữ do chính sách ngu dân của thực
+                            dân Pháp kéo dài suốt hàng chục năm.</p>
+                        <p><strong>Biện pháp đối phó:</strong> Thành lập Nha Bình dân học vụ vào ngày 8/9/1945. Các lớp
+                            học xóa mù chữ được mở khắp nơi, từ đình chùa đến nhà dân, giúp hàng triệu người biết chữ
+                            trong thời gian ngắn.</p>
+                    </div>
+                    <div id="data-xam">
+                        <h4>3. Giặc ngoại xâm</h4>
+                        <p><strong>Tình trạng:</strong>
+                            <br><em>- Miền Bắc:</em> 20 vạn quân Trung Hoa Dân quốc (quân Tưởng) kéo vào dưới danh nghĩa
+                            giải giáp quân Nhật nhưng thực chất âm mưu lật đổ chính quyền cách mạng.
+                            <br><em>- Miền Nam:</em> Quân Anh tạo điều kiện cho thực dân Pháp nổ súng quay lại xâm lược
+                            từ ngày 23/9/1945 tại Sài Gòn.
+                        </p>
+                        <p><strong>Biện pháp đối phó:</strong> Thực hiện chiến lược ngoại giao mềm dẻo nhưng kiên quyết
+                            ("Dĩ bất biến, ứng vạn biến"). Ký kết Hiệp định Sơ bộ 6/3/1946 để đuổi quân Tưởng về nước và
+                            có thêm thời gian chuẩn bị cho cuộc kháng chiến trường kỳ chống Pháp.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-content reveal-left">
+                <div class="info-box">
+                    <h4>Thử thách cực đại</h4>
+                    <p>"Giặc đói, giặc dốt và giặc ngoại xâm - Ba thứ giặc cùng lúc tấn công vào một chính quyền non
+                        trẻ chưa được thế giới công nhận."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
