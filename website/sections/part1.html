@@ -6,7 +6,7 @@
         </div>
 
         <div class="content-grid">
-            <div class="text-content reveal-left" style="width: 100%;">
+            <div class="text-content reveal-left">
                 <h3>1.1. Thuận lợi và Thời cơ</h3>
                 <p>Khác với những giai đoạn trước, cách mạng Việt Nam bước vào giai đoạn mới với những thế mạnh chưa
                     từng có:</p>
@@ -19,6 +19,12 @@
                     </li>
                 </ul>
             </div>
+            <div class="image-content reveal-right">
+                <div class="image-frame">
+                    <img src="./images/619603144_1561558921735661_3985493481793504407_n.jpg" alt="Thuận lợi và thời cơ">
+                    <div class="caption">Khí thế cách mạng của quần chúng nhân dân</div>
+                </div>
+            </div>
         </div>
 
         <div class="content-grid">
@@ -27,7 +33,8 @@
                 <p>Dù có thuận lợi, nhưng khó khăn là chồng chất. Chưa nước lớn nào công nhận địa vị pháp lý của ta. Ta
                     bị bao vây tứ phía:</p>
                 <ul class="styled-list">
-                    <li><strong>Miền Bắc:</strong> 20 vạn quân Tưởng (và tay sai Việt Quốc, Việt Cách) âm mưu lật đổ.
+                    <li><strong>Miền Bắc:</strong> 20 vạn quân Tưởng (và tay sai Việt Quốc, Việt Cách) âm mưu "Diệt
+                        Cộng, cầm Hồ", quấy rối và đòi cải tổ Chính phủ.
                     </li>
                     <li><strong>Miền Nam:</strong> Quân Anh giúp Pháp nổ súng xâm lược Sài Gòn (23/9/1945).</li>
                     <li><strong>Tàn dư:</strong> 6 vạn quân Nhật chờ giải giáp vẫn còn trên đất nước ta.</li>
@@ -61,7 +68,7 @@
             </div>
         </div>
 
-        <div class="content-grid reverse">
+        <div class="content-grid">
             <div class="text-content reveal-right">
                 <h3>1.3. Khó khăn nội tại</h3>
                 <div class="stat-cards">
@@ -75,18 +82,17 @@
                         <div class="stat-label">Dân số mù chữ</div>
                         <div class="click-hint">(Bấm để xem)</div>
                     </div>
-                    <div class="card interactive-card" onclick="showDetail('xam')">
-                        <div class="stat-number">20 Vạn</div>
-                        <div class="stat-label">Quân ngoại xâm</div>
+                    <div class="card interactive-card" onclick="showDetail('tai')">
+                        <div class="stat-number">1,2 Tr</div>
+                        <div class="stat-label">Đồng (Ngân khố)</div>
                         <div class="click-hint">(Bấm để xem)</div>
                     </div>
-                </div>
+                    <div class="card interactive-card" onclick="showDetail('ngoai')">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Quan hệ ngoại giao</div>
+                        <div class="click-hint">(Bấm để xem)</div>
+                    </div>
 
-                <!-- Detail Display Area (Originally hidden) -->
-                <div id="difficulty-detail" class="difficulty-detail" style="display: none;">
-                    <button class="close-detail" onclick="closeDetail()">×</button>
-                    <h4 id="detail-title" style="color: var(--primary-red); margin-bottom: 10px;"></h4>
-                    <div id="detail-content-area"></div>
                 </div>
 
                 <!-- Hidden Data Source -->
@@ -96,39 +102,49 @@
                         <p><strong>Tình trạng:</strong> Hậu quả của chính sách vơ vét từ Nhật và Pháp, cộng với thiên
                             tai lũ lụt, khiến hơn 2 triệu người chết đói. Nông nghiệp đình trệ, 50% ruộng đất bị bỏ
                             hoang, ngân quỹ quốc gia trống rỗng.</p>
-                        <p><strong>Biện pháp đối phó:</strong> Chủ tịch Hồ Chí Minh kêu gọi lập "Hũ gạo cứu đói", tổ
-                            chức "Ngày đồng tâm" và phát động phong trào tăng gia sản xuất với khẩu hiệu "Tấc đất tấc
-                            vàng".</p>
+
                     </div>
                     <div id="data-dot">
                         <h4>2. Giặc dốt</h4>
                         <p><strong>Tình trạng:</strong> Hơn 90% dân số Việt Nam mù chữ do chính sách ngu dân của thực
                             dân Pháp kéo dài suốt hàng chục năm.</p>
-                        <p><strong>Biện pháp đối phó:</strong> Thành lập Nha Bình dân học vụ vào ngày 8/9/1945. Các lớp
-                            học xóa mù chữ được mở khắp nơi, từ đình chùa đến nhà dân, giúp hàng triệu người biết chữ
-                            trong thời gian ngắn.</p>
+
                     </div>
-                    <div id="data-xam">
-                        <h4>3. Giặc ngoại xâm</h4>
-                        <p><strong>Tình trạng:</strong>
-                            <br><em>- Miền Bắc:</em> 20 vạn quân Trung Hoa Dân quốc (quân Tưởng) kéo vào dưới danh nghĩa
-                            giải giáp quân Nhật nhưng thực chất âm mưu lật đổ chính quyền cách mạng.
-                            <br><em>- Miền Nam:</em> Quân Anh tạo điều kiện cho thực dân Pháp nổ súng quay lại xâm lược
-                            từ ngày 23/9/1945 tại Sài Gòn.
-                        </p>
-                        <p><strong>Biện pháp đối phó:</strong> Thực hiện chiến lược ngoại giao mềm dẻo nhưng kiên quyết
-                            ("Dĩ bất biến, ứng vạn biến"). Ký kết Hiệp định Sơ bộ 6/3/1946 để đuổi quân Tưởng về nước và
-                            có thêm thời gian chuẩn bị cho cuộc kháng chiến trường kỳ chống Pháp.</p>
+                    <div id="data-tai">
+                        <h4>3. Tài chính kiệt quệ</h4>
+                        <p><strong>Tình trạng:</strong> Ngân khố chỉ còn 1,2 triệu đồng, quá nửa là tiền rách. Ngân hàng
+                            Đông Dương vẫn bị Pháp kiểm soát. Quân Tưởng tung ra tiền Quan kim, Quốc tệ gây lạm phát phi
+                            mã.</p>
                     </div>
+                    <div id="data-ngoai">
+                        <h4>4. Cô lập ngoại giao</h4>
+                        <p><strong>Tình trạng:</strong> Việt Nam rơi vào tình trạng "cô lập hoàn toàn", chưa có quốc gia
+                            nào công nhận hay đặt quan hệ ngoại giao.</p>
+                    </div>
+
                 </div>
+
+
             </div>
-            <div class="image-content reveal-left">
-                <div class="info-box">
-                    <h4>Thử thách cực đại</h4>
-                    <p>"Giặc đói, giặc dốt và giặc ngoại xâm - Ba thứ giặc cùng lúc tấn công vào một chính quyền non
-                        trẻ chưa được thế giới công nhận."</p>
+            <div class="image-content reveal-left" style="display: flex; align-items: flex-start;">
+                <!-- Detail Display Area (Moved here) -->
+                <div id="difficulty-detail" class="difficulty-detail" style="display: none; width: 100%;">
+                    <button class="close-detail" onclick="closeDetail()">×</button>
+                    <h4 id="detail-title" style="color: var(--primary-red); margin-bottom: 10px;"></h4>
+                    <div id="detail-content-area"></div>
                 </div>
             </div>
         </div>
+
+        <!-- Info Box Moved to Bottom -->
+        <div class="reveal-up" style="margin-top: 3rem;">
+            <div class="info-box" style="text-align: center;">
+                <h4>Thử thách cực đại</h4>
+                <p>"Giặc đói, giặc dốt và giặc ngoại xâm - Ba thứ giặc cùng lúc tấn công vào một chính quyền non
+                    trẻ chưa được thế giới công nhận."</p>
+            </div>
+        </div>
+
+
     </div>
 </section>
