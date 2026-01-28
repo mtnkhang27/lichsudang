@@ -754,9 +754,150 @@ nav .nav-links a:hover {
     overflow: hidden;
 }
 
+/* Task diagram for 2.2: Nhiệm vụ -> 4 branches */
+/* New diagram for section 2.2 */
+#part2 .diagram-container {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+#part2 .diagram-root {
+    background: linear-gradient(180deg,#fff,#fffaf8);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    margin: 0 auto 2rem;
+    display: inline-block;
+    color: var(--primary-red);
+    font-weight: 700;
+}
+#part2 .diagram-branches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+}
+#part2 .diagram-branches .branch {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    border-top: 3px solid var(--primary-red);
+}
+#part2 .diagram-branches h5 {
+    color: var(--primary-red);
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+}
+#part2 .diagram-branches ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+#part2 .diagram-branches li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: #333;
+}
+#part2 .diagram-branches li::before {
+    content: "•";
+    color: var(--primary-red);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+#part2 .diagram-branches img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+#part2 .diagram-branches img:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width:1024px) {
+    #part2 .diagram-branches { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width:768px) {
+    #part2 .diagram-branches { grid-template-columns: 1fr; }
+}
+
+
 .slider-container:hover {
     transform: rotate(0deg);
 }
+
+/* Part 2: Slide cards (moved from inline styles in part2.html) */
+#part2 .slides { display: flex; flex-direction: column; gap: 2.5rem; }
+#part2 .slide-card { display: grid; grid-template-columns: 1fr 360px; gap: 2rem; align-items: start; padding: 1.6rem; border-radius: 12px; background: transparent; }
+/* Section 2.2 (tasks diagram) spans full width since no side visual */
+#part2 .slide-card:nth-of-type(2) { grid-template-columns: 1fr; }
+#part2 .slide-card .text { font-size: 1rem; color: var(--text-dark); }
+#part2 .slide-card .text h4 { margin-top: 0; margin-bottom: .6rem; font-size: 1.15rem; }
+#part2 .slide-card .visual { }
+#part2 .image-placeholder { width: 100%; height: 220px; background: linear-gradient(135deg,#f3f4f6,#e9eef2); display:flex;align-items:center;justify-content:center; flex-direction:column; color:#666; border: 2px dashed rgba(0,0,0,0.08); }
+#part2 .slide-red { background: linear-gradient(180deg, rgba(254,240,240,0.9), rgba(255,250,250,0.6)); border: 1px solid rgba(218,37,29,0.06); }
+#part2 .slide-green { background: linear-gradient(180deg, rgba(240,252,245,0.9), rgba(250,255,250,0.6)); border: 1px solid rgba(34,153,84,0.06); }
+#part2 .info-pill { background: rgba(218,37,29,0.08); border-left: 4px solid var(--primary-red); padding: .6rem .9rem; border-radius: 8px; }
+#part2 .strategy-grid { display:flex; gap:1rem; }
+#part2 .strategy-item { background:white; border-radius:8px; padding:1rem; flex:1; box-shadow:0 6px 18px rgba(0,0,0,0.03); }
+
+/* Headings: match Part 1 typography */
+#part2 .subsection-title, #part2 .text-content h3 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary-red); display: inline-block; margin-bottom: 1rem; border-bottom: 2px solid currentColor; padding-bottom: .25rem; }
+#part2 .slide-green .subsection-title { color: var(--bamboo-green); border-bottom-color: var(--bamboo-green); }
+
+/* Reveal / animation helpers for part2 slide-cards */
+#part2 .slide-card { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); will-change: opacity, transform; }
+#part2 .slide-card.visible { opacity: 1; transform: translateY(0); }
+#part2 .slide-card .text > * { transition: opacity .6s ease, transform .6s ease; opacity: 0; transform: translateY(10px); }
+#part2 .slide-card.visible .text > * { opacity: 1; transform: translateY(0); }
+
+@media (max-width:900px){ #part2 .slide-card{ grid-template-columns: 1fr; } #part2 .visual{ order: -1 } }
+
+/* Background for part2 moved from inline */
+#part2 { background-color: #FEF3F0; }
+
+/* Emphasis: Kẻ thù chính pill */
+#part2 .info-pill {
+    margin-top: 1rem;
+    background: linear-gradient(90deg, rgba(218,37,29,0.06), rgba(255,255,255,0.02));
+    border-left: 6px solid var(--primary-red);
+    padding: 1rem 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(218,37,29,0.06);
+}
+#part2 .info-pill .pill-title { color: var(--primary-red); font-weight: 800; font-size: 1.05rem; margin-left: .5rem; }
+#part2 .info-pill .pill-badge { font-size: 1.25rem; display:inline-block; vertical-align: middle; }
+#part2 .info-pill .pill-main { margin: .25rem 0 0; font-weight: 700; font-size: 1.15rem; color: #222; }
+#part2 .info-pill .pill-sub { margin-top: .35rem; color: #444; font-size: .95rem; }
+
+/* Slogan box styles to make it stand out */
+.slogan-box { margin-top: 1.2rem; background: linear-gradient(180deg, #fff, #fffaf8); padding: 1.2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); text-align: center; justify-content: center; }
+.slogan-box .slogan { font-size: 1.6rem; color: var(--primary-red); font-weight: 800; line-height: 1.05; letter-spacing: .6px; margin: 0; }
+.slogan-box p { margin-top: .6rem; color: #666; }
+
+/* Slight pop for visible state */
+#part2 .slide-card.visible { box-shadow: 0 18px 40px rgba(0,0,0,0.08); transform: translateY(0) scale(1.01); }
+
+/* Center slogan box and increase prominence */
+#part2 .slogan-box { max-width: 760px; margin-left: auto; margin-right: auto; }
+#part2 .slogan-box .slogan { font-size: 2rem; }
+
+/* Make slogan span both columns of a slide and center relative to the page/container */
+#part2 .slide-card .slogan-box {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 
 .slider-wrapper {
     position: relative;
