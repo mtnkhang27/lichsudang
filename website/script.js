@@ -9,13 +9,24 @@ function initAnimations() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                const el = entry.target;
+                // Special handling for slide-card elements (part2)
+                if (el.classList && el.classList.contains('slide-card')) {
+                    el.classList.add('visible');
+                    const children = el.querySelectorAll('.text > *');
+                    children.forEach((child, i) => {
+                        child.style.transitionDelay = (i * 80) + 'ms';
+                    });
+                } else {
+                    el.classList.add('active');
+                }
                 observer.unobserve(entry.target); // Only animate once
             }
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up');
+    // Include section-specific slide cards and general reveal elements
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up, #part2 .slide-card');
     revealElements.forEach(el => observer.observe(el));
 
     // Smooth Scroll for Navigation
@@ -249,71 +260,76 @@ function initTimelineStepper() {
 }
 
 function initSlider() {
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const dotContainer = document.querySelector('.slider-dots');
+    // Support multiple slider containers on the page
+    const containers = document.querySelectorAll('.slider-container');
+    containers.forEach(container => {
+        const slides = container.querySelectorAll('.slide');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+        const dotContainer = container.querySelector('.slider-dots');
 
-    if (!slides.length) return;
+        if (!slides.length) return;
 
-    let currentSlide = 0;
-    const totalSlides = slides.length;
+        let currentSlide = 0;
+        const totalSlides = slides.length;
 
-    // Create dots
-    dotContainer.innerHTML = ''; // Clear existing dots to prevent duplication
-    slides.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            goToSlide(i);
-        });
-        dotContainer.appendChild(dot);
+        // Create dots (scoped)
+        if (dotContainer) {
+            dotContainer.innerHTML = ''; // Clear existing dots to prevent duplication
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                });
+                dotContainer.appendChild(dot);
+            });
+        }
+
+        const dots = container.querySelectorAll('.dot');
+
+        function updateDots(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[index]) dots[index].classList.add('active');
+        }
+
+        function goToSlide(index) {
+            // Remove active class from current
+            slides[currentSlide].classList.remove('active');
+
+            // Update index
+            currentSlide = (index + totalSlides) % totalSlides;
+
+            // Add active class to new
+            slides[currentSlide].classList.add('active');
+            updateDots(currentSlide);
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        // Event Listeners
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+        // Auto play (optional, 5 seconds)
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        // Pause on hover
+        if (container) {
+            container.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            container.addEventListener('mouseleave', () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        }
     });
-
-    const dots = document.querySelectorAll('.dot');
-
-    function updateDots(index) {
-        dots.forEach(dot => dot.classList.remove('active'));
-        if (dots[index]) dots[index].classList.add('active');
-    }
-
-    function goToSlide(index) {
-        // Remove active class from current
-        slides[currentSlide].classList.remove('active');
-
-        // Update index
-        currentSlide = (index + totalSlides) % totalSlides;
-
-        // Add active class to new
-        slides[currentSlide].classList.add('active');
-        updateDots(currentSlide);
-    }
-
-    function nextSlide() {
-        goToSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        goToSlide(currentSlide - 1);
-    }
-
-    // Event Listeners
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-
-    // Auto play (optional, 5 seconds)
-    let slideInterval = setInterval(nextSlide, 5000);
-
-    // Pause on hover
-    const sliderContainer = document.querySelector('.slider-container');
-    if (sliderContainer) {
-        sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        sliderContainer.addEventListener('mouseleave', () => {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
-        });
-    }
 }
 
 // Interactive Detail Logic

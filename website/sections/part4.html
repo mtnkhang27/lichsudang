@@ -1,38 +1,226 @@
 <section id="part4" class="section bamboo-section">
-    <div class="bamboo-bg" style="background-image: url('./images/bamboo_art.png');"></div>
-    <div class="container">
+    <div class="bamboo-bg" style="background-image: url('./images/bamboo_art.png'); opacity: 0.3;"></div>
+
+    <div class="container bamboo-container">
         <div class="section-header reveal white-text">
-            <span class="section-tag text-green">Hiện đại</span>
-            <h2>Ngoại Giao "Cây Tre Việt Nam"</h2>
-            <p>Khái quát bởi Tổng Bí thư Nguyễn Phú Trọng</p>
+            <span class="section-tag text-green">Trường Phái Ngoại Giao</span>
+            <h2 class="pulse-text" style="font-size: 3rem;">CÂY TRE VIỆT NAM</h2>
+            <p>Triết lý "Dĩ bất biến, ứng vạn biến"</p>
         </div>
 
-        <div class="bamboo-concept">
-            <div class="bamboo-part reveal-up" style="animation-delay: 0.1s;">
-                <div class="part-name">Gốc Vững</div>
-                <div class="part-desc">Tự lực, tự cường, lợi ích quốc gia, đường lối độc lập tự chủ.</div>
+        <!-- Simple Interactive Tree -->
+        <!-- Visual Order: Top (Gốc) -> Bottom (Cành) -->
+        <div class="bamboo-tree-simple">
+            <!-- Gốc -->
+            <div class="tree-node" onclick="document.getElementById('modal-root').classList.add('active')">
+                <span class="node-icon">🪨</span>
+                <span class="node-label">Gốc Vững</span>
             </div>
-            <div class="bamboo-part reveal-up" style="animation-delay: 0.3s;">
-                <div class="part-name">Thân Chắc</div>
-                <div class="part-desc">Bản lĩnh kiên cường, đoàn kết toàn dân, thực lực quốc gia.</div>
+
+            <!-- Thân -->
+            <div class="tree-node" onclick="document.getElementById('modal-trunk').classList.add('active')">
+                <span class="node-icon">🎋</span>
+                <span class="node-label">Thân Chắc</span>
             </div>
-            <div class="bamboo-part reveal-up" style="animation-delay: 0.5s;">
-                <div class="part-name">Cành Uyển Chuyển</div>
-                <div class="part-desc">Linh hoạt sách lược, đa phương hóa, "thêm bạn bớt thù".</div>
+
+            <!-- Cành -->
+            <div class="tree-node" onclick="document.getElementById('modal-branch').classList.add('active')">
+                <span class="node-icon">🌿</span>
+                <span class="node-label">Cành Uyển Chuyển</span>
             </div>
         </div>
 
-        <div class="policy-4no reveal">
-            <h3>Chính sách Quốc phòng "4 Không"</h3>
-            <div class="grid-4no">
-                <div class="item-no">Không tham gia liên minh quân sự</div>
-                <div class="item-no">Không liên kết với nước này chống nước kia</div>
-                <div class="item-no">Không cho nước ngoài đặt căn cứ quân sự</div>
-                <div class="item-no">Không sử dụng hoặc đe dọa sử dụng vũ lực</div>
+        <!-- Modals -->
+        <!-- Each modal has an inline onclick on the overlay to close itself -->
+
+        <!-- Root Modal -->
+        <div id="modal-root" class="simple-modal-overlay"
+            onclick="if(event.target === this) this.classList.remove('active')">
+            <div class="simple-modal-box">
+                <span class="simple-close"
+                    onclick="document.getElementById('modal-root').classList.remove('active')">&times;</span>
+                <h3>🪨 GỐC VỮNG</h3>
+                <p><em>"Gốc có vững thì cây mới bền."</em></p>
+                <ul>
+                    <li><strong>Lợi ích quốc gia - dân tộc:</strong> Là nền tảng cốt lõi, là cái "Bất biến".</li>
+                    <li><strong>Độc lập, Tự chủ:</strong> Đường lối đối ngoại xuất phát từ nhu cầu tự thân.</li>
+                    <li><strong>Đại đoàn kết toàn dân:</strong> Sức mạnh nội lực của dân tộc.</li>
+                    <li><strong>Sự lãnh đạo của Đảng:</strong> Kim chỉ nam cho mọi hành động.</li>
+                </ul>
             </div>
-            <div class="quote-center">
-                "Việt Nam không chọn bên, mà chọn chính nghĩa, chọn lợi ích quốc gia."
+        </div>
+
+        <!-- Trunk Modal -->
+        <div id="modal-trunk" class="simple-modal-overlay"
+            onclick="if(event.target === this) this.classList.remove('active')">
+            <div class="simple-modal-box">
+                <span class="simple-close"
+                    onclick="document.getElementById('modal-trunk').classList.remove('active')">&times;</span>
+                <h3>🎋 THÂN CHẮC</h3>
+                <p><em>"Thân gầy guộc, lá mong manh / Mà sao nên lũy nên thành tre ơi."</em></p>
+                <ul>
+                    <li><strong>Bản lĩnh kiên định:</strong> Vững vàng trước mọi bão táp, áp lực quốc tế.</li>
+                    <li><strong>Đoàn kết & Nhân ái:</strong> Truyền thống hòa hiếu, kiên quyết bảo vệ chủ quyền.</li>
+                    <li><strong>Thực lực quốc gia:</strong> Kinh tế, quốc phòng phát triển vững chắc.</li>
+                    <li><strong>Không chọn bên:</strong> Việt Nam không chọn bên, mà chọn lẽ phải.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Branch Modal -->
+        <div id="modal-branch" class="simple-modal-overlay"
+            onclick="if(event.target === this) this.classList.remove('active')">
+            <div class="simple-modal-box">
+                <span class="simple-close"
+                    onclick="document.getElementById('modal-branch').classList.remove('active')">&times;</span>
+                <h3>🌿 CÀNH UYỂN CHUYỂN</h3>
+                <p><em>"Lạt mềm buộc chặt."</em></p>
+                <ul>
+                    <li><strong>Đa phương hóa:</strong> "Thêm bạn bớt thù", sẵn sàng làm bạn với các nước.</li>
+                    <li><strong>Linh hoạt sách lược:</strong> "Dĩ bất biến, ứng vạn biến".</li>
+                    <li><strong>Hội nhập sâu rộng:</strong> Chủ động tham gia LHQ, ASEAN, WTO.</li>
+                    <li><strong>Ngoại giao tâm công:</strong> Thu phục lòng người bằng chính nghĩa.</li>
+                </ul>
             </div>
         </div>
     </div>
+
+    <style>
+        .bamboo-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .bamboo-tree-simple {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 280px;
+        }
+
+        .tree-node {
+            background: linear-gradient(90deg, #2d6a4f, #40916c);
+            border: 2px solid #74c69d;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            user-select: none;
+        }
+
+        .tree-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(82, 183, 136, 0.5);
+            background: linear-gradient(90deg, #1b4332, #2d6a4f);
+        }
+
+        .node-icon {
+            display: block;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .node-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Simple Modal Styles */
+        .simple-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* Hidden state */
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            backdrop-filter: blur(4px);
+        }
+
+        .simple-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .simple-modal-box {
+            background: #1b4332;
+            border: 2px solid #52b788;
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s;
+        }
+
+        .simple-modal-overlay.active .simple-modal-box {
+            transform: scale(1);
+        }
+
+        .simple-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            color: #74c69d;
+            cursor: pointer;
+        }
+
+        .simple-close:hover {
+            color: #fff;
+        }
+
+        .simple-modal-box h3 {
+            color: #52b788;
+            border-bottom: 1px solid #2d6a4f;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .simple-modal-box ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .simple-modal-box li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .pulse-text {
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                text-shadow: 0 0 0 rgba(82, 183, 136, 0.4);
+            }
+
+            50% {
+                text-shadow: 0 0 20px rgba(82, 183, 136, 0.8);
+            }
+
+            100% {
+                text-shadow: 0 0 0 rgba(82, 183, 136, 0.4);
+            }
+        }
+    </style>
 </section>
