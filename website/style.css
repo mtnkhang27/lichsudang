@@ -1071,3 +1071,736 @@ nav .nav-links a:hover {
 .close-detail:hover {
     color: var(--primary-red);
 }
+/* ========== Part 5: Conclusion Section Styles ========== */
+
+/* Divider */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+    gap: 1rem;
+}
+
+.divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ccc, transparent);
+}
+
+.divider-icon {
+    font-size: 2rem;
+    color: #FFD700;
+    animation: pulse-star 2s infinite;
+}
+
+@keyframes pulse-star {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Conclusion Container */
+.conclusion-container {
+    margin-top: 3rem;
+}
+
+/* Recap Section */
+.conclusion-recap {
+    background: linear-gradient(135deg, #fff9f0 0%, #f5f0e8 100%);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--bamboo-green);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.conclusion-recap h3 {
+    color: var(--bamboo-green);
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.recap-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.key-principle {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.principle-icon {
+    font-size: 2rem;
+}
+
+/* Lessons Header */
+.lessons-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.lessons-header h3 {
+    color: var(--text-dark);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.lessons-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Three Lessons Grid */
+.lessons-grid-conclusion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.lesson-conclusion-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #ccc;
+}
+
+.lesson-conclusion-card:nth-child(1) {
+    border-top-color: #8D6E63;
+}
+
+.lesson-conclusion-card:nth-child(2) {
+    border-top-color: var(--bamboo-green);
+}
+
+.lesson-conclusion-card:nth-child(3) {
+    border-top-color: #66BB6A;
+}
+
+.lesson-conclusion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.lesson-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.lesson-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.root-icon {
+    color: #8D6E63;
+}
+
+.trunk-icon {
+    color: var(--bamboo-green);
+}
+
+.branch-icon {
+    color: #66BB6A;
+}
+
+.lesson-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin: 0.5rem 0;
+}
+
+.lesson-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.lesson-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.lesson-example,
+.lesson-modern {
+    margin-bottom: 1.5rem;
+}
+
+.lesson-example p,
+.lesson-modern p {
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+.lesson-example strong {
+    color: var(--primary-red);
+}
+
+.lesson-modern strong {
+    color: var(--bamboo-green);
+}
+
+/* Final Message */
+.final-message {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.final-message h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.message-box {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.message-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.message-main {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.message-emphasis {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.final-quote {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--star-gold);
+    border-left: 4px solid var(--star-gold);
+    padding-left: 1.5rem;
+    margin: 2rem 0 0 0;
+    text-align: left;
+}
+
+/* Responsive for Conclusion */
+@media (max-width: 1024px) {
+    .lessons-grid-conclusion {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .conclusion-recap {
+        padding: 1.5rem;
+    }
+
+    .lessons-header h3 {
+        font-size: 1.6rem;
+    }
+
+    .message-box {
+        padding: 2rem;
+    }
+
+    .final-quote {
+        font-size: 1.2rem;
+    }
+}
+
+/* ========== Lesson Quote Styles ========== */
+
+.lesson-quote {
+    background: rgba(255, 243, 224, 0.5);
+    border-left: 4px solid var(--bamboo-green);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+.lesson-quote p {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.lesson-quote cite {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
+.lesson-evidence {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #f0f9ff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* ========== References Section ========== */
+
+.references-section {
+    margin-top: 5rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    border-top: 4px solid var(--primary-red);
+}
+
+.references-section h3 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 2.5rem;
+}
+
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.reference-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.reference-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.reference-item h4 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.ref-date {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+}
+
+.ref-source {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+}
+
+.ref-source a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.ref-source a:hover {
+    color: var(--bamboo-green);
+    text-decoration: underline;
+}
+
+/* Responsive for References */
+@media (max-width: 768px) {
+    .references-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .references-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .lesson-quote {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========== Presentation Mode Enhancements ========== */
+
+/* Recap Section - Refined */
+.recap-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.recap-year {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary-red);
+    font-family: var(--font-heading);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.recap-arrow {
+    font-size: 3rem;
+    color: var(--bamboo-green);
+    animation: pulse-arrow 2s infinite;
+}
+
+@keyframes pulse-arrow {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.recap-title {
+    font-size: 2.2rem;
+    font-family: var(--font-heading);
+    text-align: center;
+    color: var(--text-dark);
+    margin: 1.5rem 0;
+    line-height: 1.4;
+}
+
+/* Updated Key Principle */
+.conclusion-recap .key-principle {
+    background: linear-gradient(135deg, var(--primary-red), #c41e1e);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 50px;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 30px rgba(218, 37, 29, 0.3);
+    border: none;
+}
+
+.conclusion-recap .principle-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Lesson Cards - Larger Text */
+.lesson-conclusion-card .lesson-header h4 {
+    font-size: 2rem;
+}
+
+.lesson-label {
+    font-size: 1.1rem;
+}
+
+.lesson-body {
+    font-size: 1.15rem;
+}
+
+.lesson-body strong {
+    font-size: 1.25rem;
+}
+
+.lesson-body p {
+    line-height: 1.9;
+    margin-top: 0.8rem;
+}
+
+.lesson-conclusion-card cite {
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Short Quote Style */
+.lesson-quote-short {
+    background: linear-gradient(135deg, #fff9f0, #ffe8d6);
+    border-left: 6px solid var(--bamboo-green);
+    padding: 1.5rem;
+    margin: 1.5rem 0 0 0;
+    font-style: normal;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c5f2d;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.lesson-quote-short cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+}
+
+/* Partner Flags */
+.lesson-partners {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5rem;
+}
+
+/* Final Message - Bigger & Bolder */
+.message-box {
+    padding: 4rem;
+}
+
+.message-icon {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    animation: flag-wave 3s ease-in-out infinite;
+}
+
+@keyframes flag-wave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.message-title {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    color: white;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.message-main {
+    font-size: 2.2rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    color: #e0e0e0;
+    font-weight: 600;
+}
+
+.final-quote {
+    font-size: 2rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 6px solid var(--star-gold);
+    text-align: center;
+    font-weight: 700;
+}
+
+/* References - Compact Mode */
+.references-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(0,0,0,0.02);
+}
+
+.references-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.reference-item {
+    padding: 1rem;
+}
+
+.reference-item h4 {
+    font-size: 0.95rem;
+}
+
+.ref-date, .ref-source {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+    .recap-year {
+        font-size: 2.5rem;
+    }
+    
+    .recap-title {
+        font-size: 1.8rem;
+    }
+    
+    .message-main {
+        font-size: 1.8rem;
+    }
+    
+    .final-quote {
+        font-size: 1.6rem;
+    }
+}
+
+/* ========== Partner Flags Redesign ========== */
+.partner-flags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.flag-badge {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    border: 2px solid var(--bamboo-green);
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-dark);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.flag-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #fff, #e8f5e9);
+}
+
+/* ========== Vietnam-themed Final Message ========== */
+.vietnam-message {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #ffffff, #fffef8);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.vietnam-stripe {
+    height: 15px;
+    width: 100%;
+}
+
+.red-stripe {
+    background: var(--primary-red);
+}
+
+.vietnam-content {
+    padding: 4rem 3rem;
+    text-align: center;
+    background: linear-gradient(135deg, #fff9f0 0%, #fffef8 50%, #fff9f0 100%);
+}
+
+.star-symbol {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: star-shine 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.4));
+}
+
+@keyframes star-shine {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% { 
+        transform: scale(1.1) rotate(5deg);
+        opacity: 1;
+    }
+}
+
+.conclusion-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--primary-red);
+    margin-bottom: 2.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
+.message-principles {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+}
+
+.principle-badge {
+    background: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 15px;
+    border: 3px solid var(--bamboo-green);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.15);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    min-width: 280px;
+}
+
+.principle-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(46, 125, 50, 0.25);
+    border-color: var(--primary-red);
+}
+
+.badge-icon {
+    font-size: 2.5rem;
+}
+
+.final-statement {
+    margin-top: 3rem;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--bamboo-green);
+    font-style: italic;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(46,125,50,0.05));
+    border-radius: 15px;
+    border-left: 6px solid var(--star-gold);
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vietnam-content {
+        padding: 3rem 1.5rem;
+    }
+    
+    .conclusion-title {
+        font-size: 2rem;
+    }
+    
+    .message-principles {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .principle-badge {
+        min-width: auto;
+        font-size: 1.2rem;
+    }
+    
+    .final-statement {
+        font-size: 1.8rem;
+    }
+}
