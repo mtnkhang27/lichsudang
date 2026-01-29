@@ -38,6 +38,13 @@ function initAnimations() {
                 target.scrollIntoView({
                     behavior: 'smooth'
                 });
+                // Close mobile menu after clicking a link
+                const navLinks = document.querySelector('.nav-links');
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    document.querySelector('.mobile-menu-toggle')?.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             }
         });
     });
@@ -62,6 +69,38 @@ function initAnimations() {
 
     // Initialize Horizontal Timeline (new)
     initHorizontalTimeline();
+
+    // Initialize Mobile Menu
+    initMobileMenu();
+}
+
+// Mobile Menu Toggle
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+
+        // Prevent body scroll when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 // Horizontal Timeline - Click to expand cards
